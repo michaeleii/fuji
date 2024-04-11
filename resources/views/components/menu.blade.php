@@ -1,7 +1,7 @@
    <div class="flex h-16 items-center justify-between">
        <div class="flex items-center">
            <div class="flex-shrink-0 text-white">
-               <span>Savoury</span>
+               <span class="text-xl font-bold">Flair</span>
            </div>
            <div class="hidden md:block">
                <div class="ml-10 flex items-baseline space-x-4">

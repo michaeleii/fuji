@@ -7,7 +7,12 @@ export default {
         "./vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php",
     ],
     theme: {
-        extend: {},
+        extend: {
+            fontFamily: {
+                sans: ["Inter", "sans-serif"],
+                brand: ["Playfair Display", "serif"],
+            },
+        },
     },
     plugins: [],
 };

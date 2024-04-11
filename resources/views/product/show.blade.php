@@ -27,7 +27,7 @@
 
                 <!-- Product info -->
                 <div class="px-4 pb-16 pt-10">
-                    <h1 class="text-2xl font-bold tracking-tight text-gray-900 sm:text-4xl">{{ $product->name }}</h1>
+                    <h1 class="font-bold tracking-tight text-gray-900 text-4xl">{{ $product->name }}</h1>
                     <p class="text-gray-500 my-6 text-xl sm:max-w-[400px]">{{ $product->description }}</p>
                     <h2 class="sr-only">Product information</h2>
                     <p class="text-3xl tracking-tight text-gray-900 font-bold">{{ $product->price }}</p>
