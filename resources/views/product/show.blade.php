@@ -19,7 +19,7 @@
 
             <div class="flex gap-6 px-6 flex-wrap">
                 <!-- Image gallery -->
-                <div class="mt-6 sm:max-w-lg">
+                <div class="mt-6 lg:max-w-lg">
                     <div class="aspect-h-5 aspect-w-4 lg:aspect-h-4 lg:aspect-w-3 sm:overflow-hidden sm:rounded-lg">
                         <img src="{{ $product->image_url }}" alt="{{ $product->name }}" class="h-full w-full object-cover object-center">
                     </div>
@@ -28,10 +28,10 @@
                 <!-- Product info -->
                 <div class="px-4 pb-16 pt-10">
                     <h1 class="font-bold tracking-tight text-gray-900 text-4xl">{{ $product->name }}</h1>
-                    <p class="text-gray-500 my-6 text-xl sm:max-w-[400px]">{{ $product->description }}</p>
+                    <p class="text-gray-500 my-6 text-xl lg:max-w-[400px]">{{ $product->description }}</p>
                     <h2 class="sr-only">Product information</h2>
                     <p class="text-3xl tracking-tight text-gray-900 font-bold">{{ $product->price }}</p>
-                    <button type="submit" class="sm:max-w-[300px] mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Add to bag</button>
+                    <button type="submit" class="lg:max-w-[300px] mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Add to bag</button>
                 </div>
             </div>
         </div>
