@@ -12,9 +12,9 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $jobs = Product::all();
+        $products = Product::paginate(4);
 
-        return view('product.index', compact('jobs'));
+        return view('product.index', compact('products'));
     }
 
     /**
