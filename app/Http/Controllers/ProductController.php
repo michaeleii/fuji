@@ -12,7 +12,9 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //
+        $jobs = Product::all();
+
+        return view('product.index', compact('jobs'));
     }
 
     /**
@@ -20,7 +22,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        return view('product.create');
     }
 
     /**
@@ -28,7 +30,20 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        request()->validate([
+            'name' => 'required|string',
+            'price' => 'required|string',
+            'description' => 'required|string',
+            'image_url' => 'required|string',
+        ]);
+
+        Product::create([
+            'name' => $request->name,
+            'price' => $request->price,
+            'description' => $request->description,
+            'image_url' => $request->image_url,
+        ]);
+        return redirect("/");
     }
 
     /**
@@ -36,7 +51,7 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        //
+        return view('product.show', compact('product'));
     }
 
     /**
@@ -44,7 +59,7 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        //
+        return view('product.edit', compact('product'));
     }
 
     /**
@@ -52,7 +67,21 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-        //
+        request()->validate([
+            'name' => 'required|string',
+            'price' => 'required|string',
+            'description' => 'required|string',
+            'image_url' => 'required|string',
+        ]);
+
+        $product->update([
+            'name' => $request->name,
+            'price' => $request->price,
+            'description' => $request->description,
+            'image_url' => $request->image_url,
+        ]);
+
+        return redirect("/");
     }
 
     /**
@@ -60,6 +89,7 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
-        //
+        $product->delete();
+        return redirect("/");
     }
 }

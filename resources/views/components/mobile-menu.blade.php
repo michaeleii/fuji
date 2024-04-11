@@ -1,7 +1,7 @@
 <div class="md:hidden" id="mobile-menu">
     <div class="space-y-1 px-2 pb-3 pt-2 sm:px-3">
         <x-nav-link href="/" mobile :active="request()->is('/')">Home</x-nav-link>
-        <x-nav-link href="/create" mobile :active="request()->is('create')">Create</x-nav-link>
+        <x-nav-link href="/products/create" mobile :active="request()->is('products/create')">Create</x-nav-link>
     </div>
     <div class="border-t border-gray-700 pb-3 pt-4">
         <div class="flex items-center px-5">
