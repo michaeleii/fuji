@@ -80,7 +80,6 @@ class ProductController extends Controller
             'description' => $request->description,
             'image_url' => $request->image_url,
         ]);
-
         return redirect("/");
     }
 

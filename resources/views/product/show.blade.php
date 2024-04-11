@@ -31,7 +31,8 @@
                     <p class="text-gray-500 my-6 text-xl lg:max-w-[400px]">{{ $product->description }}</p>
                     <h2 class="sr-only">Product information</h2>
                     <p class="text-3xl tracking-tight text-gray-900 font-bold">{{ $product->price }}</p>
-                    <button type="submit" class="lg:max-w-[300px] mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Add to bag</button>
+                    <button type="submit" class="lg:max-w-[300px] mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Add to Cart</button>
+                    <a href="/products/{{ $product->id }}/edit" class="lg:max-w-[300px] mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-zinc-600 px-8 py-3 text-base font-medium text-white hover:bg-zinc-700 focus:outline-none focus:ring-2 focus:ring-zinc-500 focus:ring-offset-2">Edit Product</a>
                 </div>
             </div>
         </div>
