@@ -1,4 +1,4 @@
-<x-layout heading="{{ $product->name }}">
+<x-layout title="{{ $product->name }}">
     <div class="bg-white">
         <div class="pt-6">
             <nav aria-label="Breadcrumb">
