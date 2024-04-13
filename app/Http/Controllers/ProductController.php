@@ -75,15 +75,26 @@ class ProductController extends Controller
             'name' => 'required|string',
             'price' => 'required|string',
             'description' => 'required|string',
-            'image_url' => 'required|string',
         ]);
 
-        $product->update([
-            'name' => $request->name,
-            'price' => $request->price,
-            'description' => $request->description,
-            'image_url' => $request->image_url,
-        ]);
+        if ($request->hasFile('image_upload')) {
+            $path = $request->file('image_upload')->store('');
+            $filePath = explode('/', $product->image_url);
+            $fileName = end($filePath);
+            Storage::delete($fileName);
+            $product->update([
+                'name' => $request->name,
+                'price' => $request->price,
+                'description' => $request->description,
+                'image_url' => env("AWS_BUCKET_URL") . "/{$path}",
+            ]);
+        } else {
+            $product->update([
+                'name' => $request->name,
+                'price' => $request->price,
+                'description' => $request->description,
+            ]);
+        }
         return redirect("/");
     }
 
@@ -92,7 +103,9 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
-        Storage::delete($product->image_url);
+        $filePath = explode('/', $product->image_url);
+        $fileName = end($filePath);
+        Storage::delete($fileName);
         $product->delete();
         return redirect("/");
     }
