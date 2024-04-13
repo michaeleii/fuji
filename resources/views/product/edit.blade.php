@@ -40,7 +40,7 @@
                                 <div class="mt-4 flex text-sm leading-6 text-gray-600">
                                     <label for="image_upload" class="relative cursor-pointer rounded-md bg-white font-semibold text-indigo-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-600 focus-within:ring-offset-2 hover:text-indigo-500 mx-auto">
                                         <span id="image_upload_label">Change image</span>
-                                        <input id="image_upload" name="image_upload" type="file" accept="image/png, image/jpeg" class="sr-only">
+                                        <input id="image_upload" name="image_upload" type="file" accept="image/png, image/jpeg, image/webp" class="sr-only">
                                     </label>
                                 </div>
                                 <p id="image_name" class="text-xs leading-5 text-gray-600">PNG, JPG up to 10MB</p>
