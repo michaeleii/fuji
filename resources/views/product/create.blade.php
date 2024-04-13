@@ -45,7 +45,7 @@
                                         <input id="image_upload" name="image_upload" type="file" accept="image/png, image/jpeg, image/webp" class="sr-only">
                                     </label>
                                 </div>
-                                <p id="image_name" class="text-xs leading-5 text-gray-600">PNG, JPG up to 10MB</p>
+                                <p id="image_name" class="text-xs leading-5 text-gray-600">PNG, JPG, WEBP up to 10MB</p>
                             </div>
                         </div>
                         @error('image_upload')
