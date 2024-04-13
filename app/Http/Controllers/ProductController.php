@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
@@ -34,15 +35,18 @@ class ProductController extends Controller
             'name' => 'required|string',
             'price' => 'required|string',
             'description' => 'required|string',
-            'image_url' => 'required|string',
+            'image_upload' => 'required|image|max:10240',
         ]);
+
+        $path = $request->file('image_upload')->store('');
 
         Product::create([
             'name' => $request->name,
             'price' => $request->price,
             'description' => $request->description,
-            'image_url' => $request->image_url,
+            'image_url' => env("AWS_BUCKET_URL") . "/{$path}",
         ]);
+
         return redirect("/");
     }
 
@@ -88,6 +92,7 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
+        Storage::delete($product->image_url);
         $product->delete();
         return redirect("/");
     }
