@@ -7,7 +7,6 @@
         <div class="flex items-center px-5">
             <div class="flex-shrink-0">
                 <img class="h-10 w-10 rounded-full" src="https://avatars.githubusercontent.com/u/57844588?v=4" alt="">
-
             </div>
             <div class="ml-3">
                 <div class="text-base font-medium leading-none text-white">Michael Lei</div>
